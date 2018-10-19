@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Favorites Recipes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Recipe</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @favorites_recipes.each do |favorites_recipe| %>
+      <tr>
+        <td><%= favorites_recipe.name %></td>
+        <td><%= favorites_recipe.recipe %></td>
+        <td><%= favorites_recipe.user_id %></td>
+        <td><%= link_to 'Show', favorites_recipe %></td>
+        <td><%= link_to 'Edit', edit_favorites_recipe_path(favorites_recipe) %></td>
+        <td><%= link_to 'Destroy', favorites_recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Favorites Recipe', new_favorites_recipe_path %>
