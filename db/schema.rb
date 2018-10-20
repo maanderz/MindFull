@@ -10,14 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_19_214551) do
+ActiveRecord::Schema.define(version: 2018_10_20_002019) do
 
-  create_table "favorites_recipes", force: :cascade do |t|
+  create_table "categories", force: :cascade do |t|
     t.string "name"
-    t.text "recipe"
-    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "category_items", force: :cascade do |t|
+    t.integer "category_id"
+    t.string "ingredient_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_category_items_on_category_id"
+  end
+
+  create_table "favorites_recipes", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "name"
+    t.text "recipe"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_favorites_recipes_on_user_id"
+  end
+
+  create_table "meal_plans", force: :cascade do |t|
+    t.integer "user_id"
+    t.text "recipe"
+    t.string "weekday"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_meal_plans_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

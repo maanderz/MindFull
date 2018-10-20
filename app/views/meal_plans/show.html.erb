@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Recipe:</strong>
+  <%= @meal_plan.recipe %>
+</p>
+
+<p>
+  <strong>Weekday:</strong>
+  <%= @meal_plan.weekday %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @meal_plan.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_meal_plan_path(@meal_plan) %> |
+<%= link_to 'Back', meal_plans_path %>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  recipe: MyText
+  weekday: MyString
+  user_id: 1
+
+two:
+  recipe: MyText
+  weekday: MyString
+  user_id: 1

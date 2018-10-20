@@ -21,8 +21,30 @@ FavoritesRecipe.destroy_all
 FavoritesRecipe.create!({
   name: 'apple pie',
   recipe: 'one apple',
-  user_id: 2
+  user_id: 1
 })
+
+MealPlan.destroy_all
+
+MealPlan.create!({
+  recipe: 'apple pie',
+  weekday: 'monday',
+  user_id: 1
+})
+
+Category.destroy_all
+
+Category.create!({
+  name: 'fruits'
+})
+
+CategoryItem.destroy_all 
+
+CategoryItem.create!({
+  ingredient_name: 'apple',
+  category_id: 1
+})
+
 
 
 puts 'The End'
