@@ -16,35 +16,43 @@ User.create!({
   email:'angie@123.com'
 })
 
-FavoritesRecipe.destroy_all
-
-FavoritesRecipe.create!({
-  name: 'apple pie',
-  recipe: 'one apple',
-  user_id: 1
-})
-
-MealPlan.destroy_all
-
-MealPlan.create!({
-  recipe: 'apple pie',
-  weekday: 'monday',
-  user_id: 1
-})
-
 Category.destroy_all
 
 Category.create!({
   name: 'fruits'
 })
 
-CategoryItem.destroy_all 
+Ingredient.destroy_all
 
-CategoryItem.create!({
-  ingredient_name: 'apple',
+Ingredient.create!({
+  name: 'Apple',
+  quantity: 2,
   category_id: 1
 })
 
+Recipe.destroy_all
+
+Recipe.create!({
+  name: 'Apple pie',
+  img: 'https://img.taste.com.au/sQs5aHeK/taste/2016/11/apple-pie-with-cheddar-crust-97328-1.jpeg',
+  ingredient_id: 1,
+  instructions: 'Bake'
+})
+
+MealPlan.destroy_all
+
+MealPlan.create!({
+  recipe_id: 1,
+  weekday: 'monday',
+  user_id: 1
+})
+
+FavoritesRecipe.destroy_all
+
+FavoritesRecipe.create!({
+  recipe_id: 1,
+  user_id: 1
+})
 
 
 puts 'The End'

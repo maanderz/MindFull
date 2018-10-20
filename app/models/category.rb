@@ -1,7 +1,7 @@
 class Category < ApplicationRecord
 
-  has_many :category_items
+  has_many :ingredients
   
-  validates :name, presence: true
+  # validates :name, presence: true
 
 end
